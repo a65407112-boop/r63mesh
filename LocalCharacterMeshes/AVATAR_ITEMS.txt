@@ -1,0 +1,34 @@
+AVATAR ITEMS BY ID
+
+local avatar = getgenv().LocalCharacterMeshes
+avatar.Wear(123456789)        -- catalog ASSET ID, not a raw mesh/texture ID
+avatar.WearBundle(12345)     -- catalog BUNDLE ID (different ID namespace)
+avatar.Remove(123456789)
+avatar.RemoveBundle(12345)
+avatar.ClearItems()          -- keep custom meshes; remove requested IDs
+avatar.ListItems()           -- returns {assets={...}, bundles={...}}
+avatar.Reload()
+avatar.Stop()                -- restore original local appearance
+
+IDs are saved in LocalCharacterMeshes/avatar_items.json after successful loading.
+You can also edit {"assets":[123456789],"bundles":[12345]} then call Reload().
+Unowned available catalog items may be previewed locally. This does not purchase
+items, change your account avatar, or make the appearance visible to other users.
+Deleted, private, restricted, invalid and rig-incompatible assets can fail.
+Supported: classic clothes, face, body parts, rigid accessories, layered clothing,
+eyebrows and eyelashes when accepted by the native Roblox avatar builder.
+Models, tools, decals, raw meshes, animation packs, makeup/profile backgrounds
+and every other non-supported type are rejected. Literally ANY ID is impossible.
+Bundle body/accessory assets are expanded; nonwearable bundle components skipped.
+
+With IDs enabled, a native local visual avatar follows your character's existing
+Motor6D pose. Your actual character remains the player/camera/physics character.
+Only its body/accessories are hidden locally; equipped tools are kept visible.
+The visual has no collisions/touch/query participation. Native accessory welds,
+WrapLayers, cages, textures and skinning data are retained by Roblox's builder.
+Matching custom meshes override the requested body geometry on the visual.
+Classic clothing STILL needs Roblox body UVs; layered clothes need matching cages.
+Custom rigs, procedural animations, facial expressions and game-specific effects
+are not guaranteed to match. First-person visual hiding uses the camera focus.
+Native R6/R15, catalog visibility, executor support and actual rendering need an
+in-game test; this script has only syntax and simulated lifecycle checks here.
