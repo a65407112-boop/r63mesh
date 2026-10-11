@@ -1,0 +1,30 @@
+НАБОРЫ МЕШЕЙ — GUI v1.2
+
+Создай в workspace своего executor папку:
+LocalCharacterMeshes/Packs/ЛюбоеНазвание
+Положи туда нативные Roblox .mesh с именами частей тела.
+В GUI открой селектор наборов или нажми обновление, выбери папку и нажми Применить.
+Папки R6/R15 внутри набора тоже поддерживаются; они имеют приоритет над файлами
+в корне набора для соответствующего рига. Можно использовать пробелы и Unicode.
+
+R6: Head.mesh, Torso.mesh, LeftArm.mesh, RightArm.mesh, LeftLeg.mesh, RightLeg.mesh.
+R15: Head.mesh, UpperTorso.mesh, LowerTorso.mesh, LeftUpperArm.mesh, LeftLowerArm.mesh,
+LeftHand.mesh, RightUpperArm.mesh, RightLowerArm.mesh, RightHand.mesh,
+LeftUpperLeg.mesh, LeftLowerLeg.mesh, LeftFoot.mesh, RightUpperLeg.mesh,
+RightLowerLeg.mesh, RightFoot.mesh.
+Пробелы, подчёркивания, дефисы и регистр имён файлов игнорируются при сопоставлении.
+Выбор сохраняется в selected_pack.txt и применяется после респавна.
+Старые LocalCharacterMeshes/R6 и /R15 доступны как «Мои меши (R6 / R15)».
+
+RBLXBikiniMod автоматически скачивается с GitHub в Packs/RBLXBikiniMod.
+Это пять оригинальных R6-мешей; пользовательские файлы не заменяются.
+Кнопка GitHub добавляет недостающие файлы. Нужны HTTP и delfile для отката записи.
+
+Необязательный config.json находится в папке набора и использует ключи R6/R15.
+Файлы в нём указываются относительно выбранной папки рига или корня набора.
+Подробные параметры текстур и cages описаны в README.txt.
+Одежде нужны совместимые Roblox UV/cages: скрипт не создаёт их.
+
+GUI: ID предмета/набора, удаление, обновление, отключение мешей, восстановление.
+RightShift скрывает/показывает окно; после сворачивания нажми кнопку R63.
+Перетаскивай заголовок мышью или касанием. Stop восстанавливает исходный аватар.

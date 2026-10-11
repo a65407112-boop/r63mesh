@@ -1,9 +1,12 @@
 LOCAL CHARACTER MESHES
 
 1. Execute local_character_meshes.lua once.
-2. Put NATIVE ROBLOX .mesh files in LocalCharacterMeshes/R6 or /R15
-   inside your EXECUTOR's workspace directory. This is NOT Roblox Workspace.
-3. Execute the script again, or run:
+2. Put NATIVE ROBLOX .mesh files in LocalCharacterMeshes/Packs/<YourName>.
+   Open the GUI mesh selector, choose your folder and click Apply.
+   R6/R15 subfolders inside each pack are supported. See PACKS.txt.
+   Files live inside your EXECUTOR workspace directory, not Roblox Workspace.
+   The original LocalCharacterMeshes/R6 and /R15 folders still work.
+3. To reread changed files, use the GUI Reload button or run:
    getgenv().LocalCharacterMeshes.Reload()
 4. Restore your original appearance and disconnect the loader:
    getgenv().LocalCharacterMeshes.Stop()
